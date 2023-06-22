@@ -1,0 +1,53 @@
+code in c++
+// https://practice.geeksforgeeks.org/problems/first-and-last-occurrences-of-x3116/1?page=1&difficulty[]=-1&category[]=Arrays&curated[]=1&curated[]=8&curated[]=7&curated[]=2&sortBy=submissions
+
+vector<int> find(int arr[], int n , int x )
+{
+    // code here
+    vector<int> k;
+    int s=0;int e=n-1;
+    int ans1=-1;
+    while(s<=e){
+        int mid=s+(e-s)/2;
+        if(arr[mid]==x)
+        {
+            
+           ans1=mid;
+           s=mid+1;
+            
+           
+        }
+        else if(arr[mid]>x)
+        {
+            e=mid-1;
+        }
+        else{
+            s=mid+1;
+        }
+    }
+    
+    s=0;e=n-1;
+    int ans2=-1;
+    while(s<=e){
+        int mid=s+(e-s)/2;
+        if(arr[mid]==x)
+        {
+            
+            
+            ans2=mid;
+            e=mid-1;
+        }
+        else if(arr[mid]>x)
+        {
+            e=mid-1;
+        }
+        else{
+            s=mid+1;
+        }
+    }
+    
+    k.push_back(ans2);
+    k.push_back(ans1);
+    return k;
+
+}
