@@ -1,0 +1,32 @@
+//https://practice.geeksforgeeks.org/problems/square-root/0
+class Solution{
+  public:
+    long long int floorSqrt(long long int x) 
+    {
+        // Your code goes here   
+        int s=0;
+        int long long e=x;
+        int long long mid=s+(e-s)/2;
+        int long long ans=0;
+        while(s<=e)
+        {
+            mid=s+(e-s)/2;
+            if(mid*mid==x)
+            {
+                ans=mid;
+                break;
+            }
+            else if(mid*mid>x)
+            {
+                e=mid-1;
+            }
+            else
+            {
+                ans=mid;
+                s=mid+1;
+            }
+        }
+        return ans;
+        
+    }
+};
