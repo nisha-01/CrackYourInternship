@@ -1,0 +1,41 @@
+https://practice.geeksforgeeks.org/problems/string-palindromic-ignoring-spaces4723/1?page=2&sortBy=submissions&searchQuery=PALINDROME
+
+class Solution{
+public:	
+
+    
+	bool sentencePalindrome(string s) 
+	{
+	    // code here 
+	    
+	    int f=0;
+	    int e=s.size()-1;
+	    while(f<=e)
+	    {
+	        if(s[f]!=s[e])
+	        {
+	            if(s[f]<'a' || s[f]>'z')
+	            {
+	                f++;
+	            }
+	            else if(s[e]<'a' || s[e]>'z')
+	            {
+	                e--;
+	            }
+	            else
+	            {
+	                return 0;
+	            }
+	            
+	        }
+	        
+	        else
+	        {
+	            
+	            f++;
+	            e--;
+	        }
+	    }
+	    return 1;
+	}
+};
